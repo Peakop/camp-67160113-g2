@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
-    function index(){
-    return $this->MYFUNCTION();
-    }
-    function myfunction(){
-        return "<h1>MY FUNCTION</h1>";
-    }
+    public function index(Request $request)
+    {
+        // รับค่า num จาก URL แบบปลอดภัย
+        $num = $request->query('num');  // /mycontroller?num=5
 
+        // ส่งค่าไปให้ view
+        return view('myview.index', compact('num'));
+    }
 }
-
