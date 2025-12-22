@@ -1,14 +1,22 @@
-@extends('template.default')
-@section('title', 'My Controller')
-@section('header1', "My View")
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop #HTML - FORM</title>
+</head>
+<body>
 
-@section('content')
-    <form action="#" method="POST">
-        @csrf
-        <label for="num">ป้อนข้อมูลแม่สูตรคูณ</label>
-        <input type="number" id="num"
-            class="form-control" name="num">
-        <button class="btn btn-success"
-            type="submit">ส่งข้อมูล</button>
-    </form>
-@endsection
+<h1>Workshop #HTML - FORM</h1>
+
+<form action="/mycontroller" method="POST">
+    @csrf
+
+    <label for="num">ป้อนข้อมูลแม่สูตรคูณ</label><br>
+    <input type="number" id="num" name="num" required>
+    <br><br>
+
+    <button type="submit">ส่งข้อมูล</button>
+</form>
+
+</body>
+</html>

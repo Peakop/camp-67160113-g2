@@ -3,22 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// php artisan make:controller MyController
+
 class MyController extends Controller
 {
-    function __construct(){
-        //
-    }
-    function index(){
-        // echo $_GET['num'];
-        return $this->MYfunCTION();
-    }
-    function myfunction(){
+    // แสดงหน้า Workshop #HTML-FORM
+    public function index()
+    {
         return view('myview.index');
     }
-    function process(Request $request){
-        // echo $_POST['num'];
-        $data['mynum']= $request->input('num');
+
+    // รับค่าจากฟอร์ม แล้วส่งไปหน้าใหม่
+    public function process(Request $request)
+    {
+        $data['mynum'] = $request->input('num');
         return view('myview.process', $data);
     }
 }
