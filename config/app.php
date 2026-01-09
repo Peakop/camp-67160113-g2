@@ -78,13 +78,11 @@ return [
     |
     */
 
-    // ✅ เปลี่ยนค่า default เป็น 'th'
-    'locale' => env('APP_LOCALE', 'th'),
+    'locale' => env('APP_LOCALE', 'en'),
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
-    // ✅ (แนะนำ) Faker ให้เป็นไทย ถ้าใช้ factory/seed จะได้ชื่อไทย
-    'faker_locale' => env('APP_FAKER_LOCALE', 'th_TH'),
+    'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
 
     /*
     |--------------------------------------------------------------------------
