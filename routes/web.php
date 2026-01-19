@@ -24,18 +24,6 @@ Route::get('/view2', function () {
 Route::get('/mycontroller', [App\Http\Controllers\MyController::class, 'index']);
 Route::post('/mycontroller', [App\Http\Controllers\MyController::class, 'process']);
 
-/*
-|--------------------------------------------------------------------------
-| FlightController (โค้ดเดิม)
-|--------------------------------------------------------------------------
-*/
-Route::namespace('App\Http\Controllers')->group(function () {
-    Route::get('/flights', 'FlightController@index');
-    Route::get('/flight/{id}', 'FlightController@update');
-    Route::post('/flight', 'FlightController@store');
-    Route::put('/flight/{id}', 'FlightController@update_action');
-    Route::delete('/flight/{id}', 'FlightController@delete_action');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +47,11 @@ Route::put('/pokedexs/{pokedex}', [PokedexController::class, 'update'])
 
 Route::delete('/pokedexs/{pokedex}', [PokedexController::class, 'destroy'])
     ->name('pokedexs.destroy');
+
+
+use App\Http\Controllers\UploadController;
+Route::get('/upload', [UploadController::class, 'index'])
+    ->name('upload.form');
+Route::post('/upload', [UploadController::class, 'store'])
+    ->name('upload.submit');
+
